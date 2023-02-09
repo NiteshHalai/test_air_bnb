@@ -1,36 +1,36 @@
 """
 HBNBCommand contains the entry point of the command interpreter
 """
-if __name__ == "__main__":
-    import cmd
-    import sys
 
-    class HBNBCommand(cmd.Cmd):
+import cmd
+import sys
 
-        """
-        class HBNBCommand
-        """
+class HBNBCommand(cmd.Cmd):
 
-        def __init__(self):
-            cmd.Cmd.__init__(self)
-            self.prompt = '(hbnb)'
+    """
+    class HBNBCommand
+    """
 
-        def do_quit(self, arg):
-            sys.exit(1)
+    def __init__(self):
+        cmd.Cmd.__init__(self)
+        self.prompt = '(hbnb)'
 
-        def do_EOF(self, line):
-            sys.exit(1)
+    def do_quit(self, arg):
+        sys.exit(1)
 
-        def emptyline(self):
-            pass
+    def do_EOF(self, line):
+        sys.exit(1)
 
-        def help_quit(self):
-            print ("syntax: quit")
-            print ("-- terminates the application")
+    def emptyline(self):
+        pass
 
-        def help_EOF(self):
-            print ("syntax: EOF")
-            print ("-- terminates the application")
+    def help_quit(self):
+        print ("syntax: quit")
+        print ("-- terminates the application")
 
-    cli = HBNBCommand()
-    cli.cmdloop()
+    def help_EOF(self):
+        print ("syntax: EOF")
+        print ("-- terminates the application")
+
+if __name__ == '__main__':
+    HBNBCommand().cmdloop()
