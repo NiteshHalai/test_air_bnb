@@ -38,10 +38,14 @@ class HBNBCommand(cmd.Cmd):
         if len(args) == 0:
             print("** class name missing **")
         else:
-            args_to_list = args.split()
-            if args[0] == 'BaseModel':
-                my_model = BaseModel()
-                print (my_model.id())
+            args_list = args.split()
+            if args_list[0] not in ['BaseModel']:
+                print(args_list[0])
+                print('** class name missing **')
+            else:
+                if args_list[0] == 'BaseModel':
+                    my_model = BaseModel()
+                    print (my_model.id)
 
     def do_show(self, args):
         if len(args) == 0:
